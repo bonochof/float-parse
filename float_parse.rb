@@ -1,5 +1,7 @@
 =begin
   DFAに基づく字句解析プログラム
+  float_parse.rb
+  7061-0503  Ryosuke Takata
 =end
 
 state = 0
@@ -9,6 +11,7 @@ if str == nil
   exit
 end
 
+# DFAで1文字ずつ状態遷移
 str.each_char do |ch|
   case state
   when 0
@@ -66,6 +69,7 @@ str.each_char do |ch|
   end
 end
 
+# 表示
 if state == 3 or state == 6
   puts "float number"
 else
